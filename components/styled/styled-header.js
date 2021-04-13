@@ -26,4 +26,8 @@ export const StyledNavItem = styled.li`
     border: solid #3c00FF 3px;
     border-radius: 1.5em;
     list-style-type: none;
+    &:hover {
+        background-color: #3c00FF;
+        color: white;
+    }
 `
