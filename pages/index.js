@@ -15,7 +15,7 @@ export default function Home() {
     <Introduction>
       <Introduction.Name>Jason Eliasen</Introduction.Name>
       <Introduction.Title>Learner & Web Developer</Introduction.Title>
-      <Introduction.Description>I play with tech and I love what i do.</Introduction.Description>
+      <Introduction.Description>I play with tech and I love what I do.</Introduction.Description>
       <Introduction.Picture src="/pictures/cartoonme.png" alt="cartoon of me created by my daughter"></Introduction.Picture>
     </Introduction>
     </>

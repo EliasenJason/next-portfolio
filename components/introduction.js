@@ -1,9 +1,7 @@
 import { Container, StyledTitle, StyledDescription, StyledPicture, StyledName } from './styled/styled-introduction'
 
 const Introduction = ({children}) => {
-    return (
-        <Container>{children}</Container>
-    )
+    return <Container>{children}</Container>
 }
 
 Introduction.Name = ({children}) => {

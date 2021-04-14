@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 export const StyledLogo = styled.img`
     height: 100%;
-    width: 100px;
+    width: 130px;
 `
 
 export const StyledNav = styled.ul`

@@ -16,7 +16,7 @@ export const StyledDescription = styled.p`
     
 `
 export const StyledPicture = styled.img`
-    width: 50%;
+    width: 30%;
 `
 
 
