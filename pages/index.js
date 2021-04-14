@@ -1,6 +1,5 @@
-import Header from '../components/header.js'
-import Introduction from '../components/introduction.js'
 import HeadTag from './headtag'
+import { Header, Introduction, Education } from '../components/index'
 
 export default function Home() {
   return (
@@ -18,6 +17,9 @@ export default function Home() {
       <Introduction.Description>I play with tech and I love what I do.</Introduction.Description>
       <Introduction.Picture src="/pictures/cartoonme.png" alt="cartoon of me created by my daughter"></Introduction.Picture>
     </Introduction>
+    <Education>
+      <Education.HeadLine>With no formal education how did i get to where I am?</Education.HeadLine>
+    </Education>
     </>
   )
 }
