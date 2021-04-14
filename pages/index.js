@@ -1,5 +1,7 @@
 import HeadTag from './headtag'
 import { Header, Introduction, Education } from '../components/index'
+import EducationCards from '../containers/Container-EducationCard'
+import cardData from '../public/data/education'
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
     </Introduction>
     <Education>
       <Education.HeadLine>With no formal education how did i get to where I am?</Education.HeadLine>
+      <EducationCards data={cardData}></EducationCards>
     </Education>
     </>
   )
