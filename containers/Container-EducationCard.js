@@ -11,7 +11,9 @@ const ContainerEducationCard = ({data}) => {
         <EducationCard>
             {data.map((item) => {
                 return (
-                    <h1>{item.name}</h1>
+                    <>
+                    {item.picture}
+                    </>
                 )
             })}
         </EducationCard>
