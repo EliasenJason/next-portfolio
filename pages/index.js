@@ -1,7 +1,7 @@
 import HeadTag from './headtag'
 import { Header, Introduction, Education } from '../components/index'
-import EducationCards from '../containers/Container-EducationCard'
 import cardData from '../public/data/education'
+import FlipCard from '../components/containers/container-education-card'
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
     </Introduction>
     <Education>
       <Education.HeadLine>With no formal education how did i get to where I am?</Education.HeadLine>
-      <EducationCards data={cardData}></EducationCards>
+      {cardData.map((item) => <FlipCard picture={item.picture} name={item.name}></FlipCard>)}
     </Education>
     </>
   )

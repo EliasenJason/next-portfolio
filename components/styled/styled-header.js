@@ -13,7 +13,6 @@ export const StyledLogo = styled.img`
 
 export const StyledNav = styled.ul`
     display: flex;
-
 `
 
 export const StyledNavItem = styled.li`

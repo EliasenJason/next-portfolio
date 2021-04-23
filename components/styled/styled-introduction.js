@@ -7,7 +7,7 @@ export const Container = styled.div`
     align-items: center;
 `
 export const StyledName = styled.h1`
-    font-family: 'Spartan', sans-serif; 
+    font-family: 'Spartan', sans-serif;
 `
 export const StyledTitle = styled.h2`
     
