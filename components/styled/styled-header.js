@@ -4,10 +4,10 @@ export const Container = styled.div`
     background-color: white;
     display:flex;
     justify-content: space-between;
+    height: 10vh;
 `
 
 export const StyledLogo = styled.img`
-    height: 100%;
     width: 130px;
 `
 

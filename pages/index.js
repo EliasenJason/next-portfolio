@@ -1,7 +1,5 @@
 import HeadTag from './headtag'
-import { Header, Introduction, Education } from '../components/index'
-import cardData from '../public/data/education'
-import FlipCard from '../components/containers/container-education-card'
+import { Header, Introduction } from '../components/index'
 
 export default function Home() {
   return (
@@ -19,10 +17,6 @@ export default function Home() {
       <Introduction.Description>I play with tech and I love what I do.</Introduction.Description>
       <Introduction.Picture src="/pictures/cartoonme.png" alt="cartoon of me created by my daughter"></Introduction.Picture>
     </Introduction>
-    <Education>
-      <Education.HeadLine>With no formal education how did i get to where I am?</Education.HeadLine>
-      {cardData.map((item) => <FlipCard picture={item.picture} name={item.name}></FlipCard>)}
-    </Education>
     </>
   )
 }
