@@ -18,6 +18,10 @@ export const StyledDescription = styled.p`
 `
 export const StyledPicture = styled.img`
     width: 30%;
+    margin: 2em;
+    @media (max-width: 768px) {
+        width: 50%;
+    }
 `
 
 
