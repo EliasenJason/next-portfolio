@@ -14,11 +14,11 @@ export default function Home() {
     <Introduction>
       <Introduction.Name>Jason Eliasen</Introduction.Name>
       <Introduction.Title>Learner & Web Developer</Introduction.Title>
-      <Introduction.Description>I play with tech and I love what I do.</Introduction.Description>
+      <Introduction.Description>A self-educated and self-motivated web developer from Grande Prairie, Alberta. Enjoys learning modern web development in his spare time.</Introduction.Description>
       <Introduction.Picture src="/pictures/cartoonme.png" alt="cartoon of me created by my daughter"></Introduction.Picture>
     </Introduction>
     <Knowledge>
-      <Knowledge.Header>What do I play with?</Knowledge.Header>
+      <Knowledge.Header>What kind of tech do i use?</Knowledge.Header>
       <Knowledge.Explination>A variety of frameworks, libraries and languages that I have had the opportunity to utilize</Knowledge.Explination>
       <Knowledge.Cards />
     </Knowledge>
