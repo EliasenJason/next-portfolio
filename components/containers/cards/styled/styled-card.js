@@ -16,6 +16,7 @@ export const StyledCard = styled.div`
     }
 `
 export const StyledCardLogo = styled.p`
+    margin: 0;
 `
 
 export const StyledCardName = styled.p`

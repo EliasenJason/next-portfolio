@@ -17,3 +17,16 @@ export const StyledCardContainer = styled.div`
 export const StyledExplination = styled.p`
     color: #FFF;
 `
+
+export const StyledGoalContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
+export const StyledGoal = styled.div`
+    border: solid black .2em;
+    display: block;
+    width: 25%;
+    margin: 1em;
+`
+export const StyledGoalText = styled.p``

@@ -28,5 +28,6 @@ export const StyledNavItem = styled.li`
     &:hover {
         background-color: #3c00FF;
         color: white;
+        cursor: pointer;
     }
 `
