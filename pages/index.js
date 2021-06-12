@@ -5,7 +5,7 @@ import { Header, Introduction, Knowledge } from '../components/index'
 
 const GlobalStyle = createGlobalStyle`
 body {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   font-family: Open-Sans, Helvetica, Sans-Serif;

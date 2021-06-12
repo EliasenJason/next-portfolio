@@ -17,6 +17,7 @@ export const StyledNav = styled.ul`
 
 export const StyledNavItem = styled.li`
     display: flex;
+    height: 2em;
     flex-direction: row;
     align-items: center;
     margin-right: 2em;
