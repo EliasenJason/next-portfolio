@@ -12,12 +12,12 @@ ContactForm.InputLabel = ({children}) => {
     return <StyledInputLabel>{children}</StyledInputLabel>
 }
 
-ContactForm.Input = () => {
-    return <StyledInput></StyledInput>
+ContactForm.Input = ({value, onChange}) => {
+    return <StyledInput value={value} onChange={onChange}></StyledInput>
 }
 
-ContactForm.Button = ({children}) => {
-    return <StyledButton>{children}</StyledButton>
+ContactForm.Button = ({children, onClick}) => {
+    return <StyledButton onClick={onClick}>{children}</StyledButton>
 }
 
 export default ContactForm

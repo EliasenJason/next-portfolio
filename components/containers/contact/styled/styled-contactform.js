@@ -22,6 +22,7 @@ export const StyledInput = styled.input`
     display: block;
 `
 export const StyledButton = styled.button`
-
+    display: block;
+    margin-left: auto;
 `
 
