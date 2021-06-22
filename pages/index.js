@@ -2,6 +2,7 @@ import HeadTag from './headtag'
 import { Fast, Clean, Responsive } from '../public/data/svgs'
 import { createGlobalStyle } from 'styled-components'
 import { Header, Introduction, Knowledge } from '../components/index'
+import ContactFormContainer from '../components/containers/contact/ContactForm'
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -23,6 +24,7 @@ export default function Home() {
         <Header.NavItem>Say Hello?</Header.NavItem>
       </Header.Nav>
     </Header>
+    <ContactFormContainer />
     <Introduction>
       <Introduction.Name>Jason Eliasen</Introduction.Name>
       <Introduction.Title>Learner & Web Developer</Introduction.Title>
