@@ -3,28 +3,23 @@ import { Fast, Clean, Responsive } from '../public/data/svgs'
 import { createGlobalStyle } from 'styled-components'
 import { Header, Introduction, Knowledge } from '../components/index'
 import ContactFormContainer from '../components/containers/contact/ContactForm'
+import { useState } from 'react'
 
-const GlobalStyle = createGlobalStyle`
-body {
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
-  font-family: Open-Sans, Helvetica, Sans-Serif;
-}
-`;
 
 export default function Home() {
+
+  const [isContactOpen, setIsContactOpen] = useState(false)
+  
   return (
     <>
-    <GlobalStyle />
     <HeadTag />
     <Header>
       <Header.Logo src="/pictures/logo.svg" alt="my logo"/>
       <Header.Nav>
-        <Header.NavItem>Say Hello?</Header.NavItem>
+        <Header.NavItem onClick={() => setIsContactOpen(true)} isContactOpen={isContactOpen}>Say Hello?</Header.NavItem>
       </Header.Nav>
     </Header>
-    <ContactFormContainer />
+    <ContactFormContainer setIsContactOpen={setIsContactOpen} isContactOpen={isContactOpen}/>
     <Introduction>
       <Introduction.Name>Jason Eliasen</Introduction.Name>
       <Introduction.Title>Learner & Web Developer</Introduction.Title>

@@ -1,7 +1,7 @@
 import { Container, StyledHeader, StyledInputLabel, StyledInput, StyledButton } from "./styled-contactform"
 
-const ContactForm = ({children}) => {
-    return <Container>{children}</Container>
+const ContactForm = ({children, isContactOpen}) => {
+    return <Container isContactOpen={isContactOpen}>{children}</Container>
 }
 
 ContactForm.Header = () => {

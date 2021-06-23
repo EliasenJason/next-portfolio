@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     right: 0;
     position: absolute;
-    transform: translateX(0
-        00px);
+    transform: ${({isContactOpen}) => isContactOpen ? 'translateX(000px)' : 'translateX(300px)'};
     height: 500px;
     width: 15%;
     transition: all 800ms cubic-bezier(.8, 0, .33, 1);

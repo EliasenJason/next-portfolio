@@ -16,7 +16,7 @@ export const StyledNav = styled.ul`
 `
 
 export const StyledNavItem = styled.li`
-    display: flex;
+    display: ${({isContactOpen}) => isContactOpen ? 'none' : 'flex'};
     height: 2em;
     flex-direction: row;
     align-items: center;

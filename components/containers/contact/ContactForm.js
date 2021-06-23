@@ -4,17 +4,21 @@ import ContactForm from "./styled/components";
 
 
 
-const ContactFormContainer = () => {
+const ContactFormContainer = ({setIsContactOpen, isContactOpen}) => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [comment, setComment] = useState('')
 
     const handleSubmit = (event) => {
-        console.log(`my state is the following: name=${name}, email=${email}, comment=${comment}`)
+        //TODO check if fields are filled out than send data to database
+        console.log(`my state is the following: name=${name}, email=${email}, comment=${comment} and you should do send this to a server or something`)
     }
+
+    console.log(`state: isContactOpen = ${isContactOpen}`)
     return (
-        <ContactForm>
+        <ContactForm isContactOpen={isContactOpen}>
+            <button onClick={() => setIsContactOpen(false)}> X </button>
             <ContactForm.Header>GET IN TOUCH</ContactForm.Header>
             <ContactForm.InputLabel>Tell me your name</ContactForm.InputLabel>
             <ContactForm.Input type="text" value={name} onChange={(event) => setName(event.target.value)} name></ContactForm.Input>

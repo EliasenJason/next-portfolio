@@ -12,8 +12,8 @@ Header.Nav = ({children}) => {
     return <StyledNav>{children}</StyledNav>
 }
 
-Header.NavItem = ({children}) => {
-    return <StyledNavItem>{children}</StyledNavItem>
+Header.NavItem = ({children, onClick, isContactOpen}) => {
+    return <StyledNavItem isContactOpen={isContactOpen} onClick={onClick}>{children}</StyledNavItem>
 }
 
 export default Header
