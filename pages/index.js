@@ -1,38 +1,18 @@
 import HeadTag from './headtag'
 import { Fast, Clean, Responsive } from '../public/data/svgs'
 import { Header, Introduction, Knowledge } from '../components/index'
-import { createGlobalStyle } from 'styled-components'
 import ContactFormContainer from '../components/containers/contact/ContactForm'
-import { useState } from 'react'
-
-const GlobalStyle = createGlobalStyle`
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    overflow-x: hidden;
-    font-size: 20px;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-`
+import { useState,useEffect } from 'react'
 
 export default function Home() {
 
   const [isContactOpen, setIsContactOpen] = useState(false)
-  
+  const [hideThis, setHideThis] = useState(true)
+
+  useEffect(() => setHideThis(false),[])
+
   return (
     <>
-    <GlobalStyle />
     <HeadTag />
     <Header>
       <Header.Logo src="/pictures/logo.svg" alt="my logo"/>
@@ -40,7 +20,7 @@ export default function Home() {
         <Header.NavItem onClick={() => setIsContactOpen(true)} isContactOpen={isContactOpen}>Say Hello?</Header.NavItem>
       </Header.Nav>
     </Header>
-    <ContactFormContainer setIsContactOpen={setIsContactOpen} isContactOpen={isContactOpen}/>
+    {hideThis ? null : <ContactFormContainer setIsContactOpen={setIsContactOpen} isContactOpen={isContactOpen}/>}
     <Introduction>
       <Introduction.Name>Jason Eliasen</Introduction.Name>
       <Introduction.Title>Learner & Web Developer</Introduction.Title>
