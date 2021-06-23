@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    transform: translateX(300px);
     right: 0;
     position: absolute;
     transform: ${({isContactOpen}) => isContactOpen ? 'translateX(000px)' : 'translateX(300px)'};
@@ -16,7 +15,6 @@ export const StyledHeader = styled.p`
 `
 export const StyledInputLabel = styled.label`
     display: block;
-
 `
 export const StyledInput = styled.input`
     display: block;

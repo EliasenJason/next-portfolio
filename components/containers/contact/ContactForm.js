@@ -12,12 +12,10 @@ const ContactFormContainer = ({setIsContactOpen, isContactOpen}) => {
 
     const handleSubmit = (event) => {
         //TODO check if fields are filled out than send data to database
-        console.log(`my state is the following: name=${name}, email=${email}, comment=${comment} and you should do send this to a server or something`)
+        console.log(`my state is the following: name=${name}, email=${email}, comment=${comment} and you should send this to a server or something`)
     }
-
-    console.log(`state: isContactOpen = ${isContactOpen}`)
     return (
-        <ContactForm isContactOpen={isContactOpen}>
+        <ContactForm style={{transform: 'translateX(300px)'}}isContactOpen={isContactOpen}>
             <button onClick={() => setIsContactOpen(false)}> X </button>
             <ContactForm.Header>GET IN TOUCH</ContactForm.Header>
             <ContactForm.InputLabel>Tell me your name</ContactForm.InputLabel>
