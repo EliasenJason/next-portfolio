@@ -15,7 +15,7 @@ const ContactFormContainer = ({setIsContactOpen, isContactOpen}) => {
         console.log(`my state is the following: name=${name}, email=${email}, comment=${comment} and you should send this to a server or something`)
     }
     return (
-        <ContactForm style={{transform: 'translateX(300px)'}}isContactOpen={isContactOpen}>
+        <ContactForm isContactOpen={isContactOpen}>
             <button onClick={() => setIsContactOpen(false)}> X </button>
             <ContactForm.Header>GET IN TOUCH</ContactForm.Header>
             <ContactForm.InputLabel>Tell me your name</ContactForm.InputLabel>
