@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    transform: translateX(300px);
     right: 0;
     position: absolute;
     transform: ${({isContactOpen}) => isContactOpen ? 'translateX(000px)' : 'translateX(300px)'};

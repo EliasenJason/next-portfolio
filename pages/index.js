@@ -1,6 +1,5 @@
 import HeadTag from './headtag'
 import { Fast, Clean, Responsive } from '../public/data/svgs'
-import { createGlobalStyle } from 'styled-components'
 import { Header, Introduction, Knowledge } from '../components/index'
 import ContactFormContainer from '../components/containers/contact/ContactForm'
 import { useState } from 'react'
