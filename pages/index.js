@@ -1,9 +1,30 @@
 import HeadTag from './headtag'
 import { Fast, Clean, Responsive } from '../public/data/svgs'
 import { Header, Introduction, Knowledge } from '../components/index'
+import { createGlobalStyle } from 'styled-components'
 import ContactFormContainer from '../components/containers/contact/ContactForm'
 import { useState } from 'react'
 
+const GlobalStyle = createGlobalStyle`
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    overflow-x: hidden;
+    font-size: 20px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+`
 
 export default function Home() {
 
@@ -11,6 +32,7 @@ export default function Home() {
   
   return (
     <>
+    <GlobalStyle />
     <HeadTag />
     <Header>
       <Header.Logo src="/pictures/logo.svg" alt="my logo"/>
