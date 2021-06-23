@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     right: 0;
-    overflow: hidden;
     position: absolute;
-    transform: translateX(000px);
+    transform: translateX(0
+        00px);
     height: 500px;
     width: 15%;
     transition: all 800ms cubic-bezier(.8, 0, .33, 1);

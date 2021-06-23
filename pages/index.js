@@ -33,7 +33,7 @@ export default function Home() {
     </Introduction>
     <Knowledge>
       <Knowledge.GoalsContainer>
-        <Knowledge.GoalsIcon Svg={Clean} text={'I write clean and up to date code so it can be easily understood'} />
+        <Knowledge.GoalsIcon Svg={Clean} text={'I write clean and up to date ES6 code so it can be easily understood'} />
         <Knowledge.GoalsIcon Svg={Fast} text={'I ensure my code runs fast by using the most up to date technology'} />
         <Knowledge.GoalsIcon Svg={Responsive} text={'My work look good on any device!'} />
       </Knowledge.GoalsContainer>
