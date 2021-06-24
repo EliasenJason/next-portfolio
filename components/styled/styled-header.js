@@ -16,7 +16,9 @@ export const StyledNav = styled.ul`
 `
 
 export const StyledNavItem = styled.li`
-    display: ${({isContactOpen}) => isContactOpen ? 'none' : 'flex'};
+    display: flex;
+    transform: ${({isContactOpen}) => isContactOpen ? 'translateY(-100px)' : 'translateY(0px)'};
+    transition: ${({isContactOpen}) => isContactOpen ? 'all 400ms cubic-bezier(.8, 0, .33, 1)' : 'all 1000ms cubic-bezier(.8, 0, .33, 1)'};
     height: 2em;
     flex-direction: row;
     align-items: center;
