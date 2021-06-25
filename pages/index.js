@@ -1,6 +1,5 @@
-import HeadTag from './headtag'
 import { Fast, Clean, Responsive } from '../public/data/svgs'
-import { Header, Introduction, Knowledge, BlogSection } from '../components/index'
+import { Header, Introduction, Knowledge, BlogSection, HeadTag } from '../components/index'
 import ContactFormContainer from '../components/containers/contact/ContactForm'
 import Blog from '../components/containers/blogs/Blog'
 import { useState,useEffect } from 'react'

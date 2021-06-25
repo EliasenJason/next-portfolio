@@ -18,18 +18,15 @@ const blogSchema = new mongoose.Schema({
         required: [true, 'Please provide the main text for this blog']
     },
     link: {
+        type: String,
+        required: [true, 'Please provide the url to the blog']
+    },
+    twitterLink: {
         type: String
+    },
+    tech: {
+        type: Array
     }
-
-
-
 })
 
-
-        // title: 'this is the title',
-        // date: 'this is the date',
-        // blogcatchphrase: 'this is the catch',
-        // text: 'this is the text',
-        // link: 'this is the link to the text',
-        // twitterlink: 'this is the link to the tweet',
-        // tech: ['react', 'mongo']
+export default mongoose.model('blog', blogSchema)
