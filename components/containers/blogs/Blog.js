@@ -2,17 +2,18 @@ import { BlogContainer, BlogHeaderContainer, BlogTitle, BlogDate, BlogCatchPhras
 
 //TODO STYLE THIS SUCKA!
 
-const Blog = () => {
+const Blog = ({blogData, index}) => {
+    //create onclick for blog to pass data full page article passing props along with text
     return (
-        <BlogContainer>
+        <BlogContainer key={index}>
             <BlogHeaderContainer>
-                <BlogTitle>this is the title</BlogTitle>
-                <BlogDate>date</BlogDate>
+                <BlogTitle>{blogData.title}</BlogTitle>
+                <BlogDate>{blogData.date}</BlogDate>
             </BlogHeaderContainer>
-            <BlogCatchPhrase>catc</BlogCatchPhrase>
+            <BlogCatchPhrase>{blogData.blogcatchphrase}</BlogCatchPhrase>
             <BlogLinkContainer>
-                <BlogLink>link</BlogLink>
-                <BlogTwitterLink>twitterLink</BlogTwitterLink>
+                <BlogLink>{blogData.tech}</BlogLink>
+                <BlogTwitterLink>{blogData.twitterlink}</BlogTwitterLink>
             </BlogLinkContainer>
         </BlogContainer>
     )

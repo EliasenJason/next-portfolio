@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const BlogContainer = styled.div`
+    border: solid red 2px;
 `
 export const BlogHeaderContainer = styled.div`
 `
