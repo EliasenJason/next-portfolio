@@ -1,7 +1,8 @@
 import HeadTag from './headtag'
 import { Fast, Clean, Responsive } from '../public/data/svgs'
-import { Header, Introduction, Knowledge } from '../components/index'
+import { Header, Introduction, Knowledge, BlogSection } from '../components/index'
 import ContactFormContainer from '../components/containers/contact/ContactForm'
+import Blog from '../components/containers/blogs/Blog'
 import { useState,useEffect } from 'react'
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
     </Introduction>
     <Knowledge>
       <Knowledge.GoalsContainer>
-        <Knowledge.GoalsIcon Svg={Clean} text={'I write clean and up to date ES6 code so it can be easily understood'} />
+        <Knowledge.GoalsIcon Svg={Clean} text={'Clean and modern ES6 code that is easily understood'} />
         <Knowledge.GoalsIcon Svg={Fast} text={'I ensure my code runs fast by using the most up to date technology'} />
         <Knowledge.GoalsIcon Svg={Responsive} text={'My work look good on any device!'} />
       </Knowledge.GoalsContainer>
@@ -37,6 +38,9 @@ export default function Home() {
       <Knowledge.Explination>A variety of frameworks, libraries and languages that I have had the opportunity to utilize.</Knowledge.Explination>
       <Knowledge.Cards />
     </Knowledge>
+    <BlogSection>
+      <Blog></Blog>
+    </BlogSection>
     </>
   )
 }

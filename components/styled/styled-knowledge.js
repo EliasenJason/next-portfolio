@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    background: #3c00FF;
+    background: #FFF;
     text-align: center;
     z-index: 1;
 `
 export const StyledHeader = styled.h2`
-    color: #FFF;
+    color: #3c00FF;
     padding-top: 1em;
     font-size: 3rem;
 `
@@ -16,14 +16,15 @@ export const StyledCardContainer = styled.div`
     justify-content: center;
 `
 export const StyledExplination = styled.p`
-    color: #FFF;
+    color: #3c00FF;
 `
 
 export const StyledGoalContainer = styled.div`
+    background: #3c00FF;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
-    padding-top: 3em;
+    padding: 2em;
 `
 
 export const StyledGoal = styled.div`
