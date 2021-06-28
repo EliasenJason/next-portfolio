@@ -1,17 +1,23 @@
-import HeadTag from './headtag'
 import { Fast, Clean, Responsive } from '../public/data/svgs'
-import { Header, Introduction, Knowledge, BlogSection } from '../components/index'
+import { Header, Introduction, Knowledge, BlogSection, HeadTag } from '../components/index'
 import ContactFormContainer from '../components/containers/contact/ContactForm'
 import Blog from '../components/containers/blogs/Blog'
 import { useState,useEffect } from 'react'
-import blogs from "../public/data/blogs"
+// import blogs from "../public/data/blogs"
 
 export default function Home() {
 
   const [isContactOpen, setIsContactOpen] = useState(false)
-  const [hideThis, setHideThis] = useState(true)
+  const [blogs, setBlogs] = useState()
 
-  // onmount below add the fetch for blogs from database
+  useEffect(() => {
+    fetch('http://localhost:3000/api/blogs')
+    .then((res) => res.json())
+    .then((json) => setBlogs(json))
+  },[])
+
+  //this is just to hide the contact forms transition off screen on page load:
+  const [hideThis, setHideThis] = useState(true)
   useEffect(() => setHideThis(false),[])
 
   return (
@@ -41,9 +47,9 @@ export default function Home() {
       <Knowledge.Cards />
     </Knowledge>
     <BlogSection>
-    {blogs.map((blogdata, index) => {
+    {blogs && blogs.data.map((blogdata, index) => {
       return (
-        <Blog blogData={blogdata} index={index}></Blog>
+        <Blog blogData={blogdata} key={index}></Blog>
       )
     })}
     </BlogSection>

@@ -18,9 +18,9 @@ const ContactFormContainer = ({setIsContactOpen, isContactOpen}) => {
             <ContactForm.CloseButton onClick={() => setIsContactOpen(false)}></ContactForm.CloseButton>
             <ContactForm.Header>GET IN TOUCH</ContactForm.Header>
             <ContactForm.InputLabel>Name</ContactForm.InputLabel>
-            <ContactForm.Input type="text" value={name} onChange={(event) => setName(event.target.value)} name></ContactForm.Input>
+            <ContactForm.Input type="text" value={name} onChange={(event) => setName(event.target.value)}></ContactForm.Input>
             <ContactForm.InputLabel>Email</ContactForm.InputLabel>
-            <ContactForm.Input type="text" value={email} onChange={(event) => setEmail(event.target.value)} email></ContactForm.Input>
+            <ContactForm.Input type="text" value={email} onChange={(event) => setEmail(event.target.value)}></ContactForm.Input>
             <ContactForm.InputLabel>Whats up?</ContactForm.InputLabel>
             <ContactForm.Input type="text" value={comment} onChange={(event) => setComment(event.target.value)} height={'40%'}></ContactForm.Input>
             <ContactForm.Button onClick={() => handleSubmit()}>Submit</ContactForm.Button>
