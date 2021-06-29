@@ -8,7 +8,7 @@ const Blog = ({blogData, index}) => {
     console.log('blogs in component:')
     console.log(blogData)
     return (
-        <BlogContainer key={index}>
+        <BlogContainer>
             <BlogHeaderContainer>
                 <BlogTitle>{blogData.title}</BlogTitle>
                 <BlogDate>{blogData.date}</BlogDate>
@@ -16,7 +16,7 @@ const Blog = ({blogData, index}) => {
             <BlogCatchPhrase>{blogData.blogCatchPhrase}</BlogCatchPhrase>
             <BlogLinkContainer>
                 <BlogLink>{blogData.tech}</BlogLink>
-                <BlogTwitterLink>{blogData.twitterlink}</BlogTwitterLink>
+                <BlogTwitterLink>{blogData.twitterLink}</BlogTwitterLink>
             </BlogLinkContainer>
         </BlogContainer>
     )

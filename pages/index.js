@@ -3,7 +3,7 @@ import { Header, Introduction, Knowledge, BlogSection, HeadTag } from '../compon
 import ContactFormContainer from '../components/containers/contact/ContactForm'
 import Blog from '../components/containers/blogs/Blog'
 import { useState,useEffect } from 'react'
-// import blogs from "../public/data/blogs"
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -24,7 +24,9 @@ export default function Home() {
     <>
     <HeadTag />
     <Header>
-      <Header.Logo src="/pictures/logo.svg" alt="my logo"/>
+      <Link href="/admin/currentBlogs">
+        <a><Header.Logo src="/pictures/logo.svg" alt="my logo"/></a>
+      </Link>
       <Header.Nav>
         <Header.NavItem onClick={() => setIsContactOpen(true)} isContactOpen={isContactOpen}>Say Hello?</Header.NavItem>
       </Header.Nav>
