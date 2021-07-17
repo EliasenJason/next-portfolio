@@ -15,7 +15,7 @@ const BlogSchema = new mongoose.Schema({
     },
     link: {
         type: String,
-        required: [true, 'Please provide the url to the blog']
+        // required: [true, 'Please provide the url to the blog']
     },
     twitterLink: {
         type: String
