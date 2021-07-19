@@ -4,8 +4,6 @@ import { BlogContainer, BlogHeaderContainer, BlogTitle, BlogDate, BlogCatchPhras
 
 const Blog = ({blogData, index}) => {
     //create onclick for blog to pass data full page article passing props along with text
-    
-    console.log('blogs in component:')
     console.log(blogData)
     return (
         <BlogContainer>

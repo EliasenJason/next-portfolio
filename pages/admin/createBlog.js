@@ -2,24 +2,58 @@ import styled from "styled-components"
 import { Header } from "../../components"
 import Link from "next/link"
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 import Loader from "react-loader-spinner"
+
+
+// title: {
+//     type: String,
+//     required: [true, 'Please provide a title for this blog']
+// },
+// blogCatchPhrase: {
+//     type: String,
+//     required: [true, 'Please provide a catch phrase for this blog']
+// },
+// text: {
+//     type: String,
+//     required: [true, 'Please provide the main text for this blog']
+// },
+// link: {
+//     type: String,
+//     // required: [true, 'Please provide the url to the blog']
+// },
+// twitterLink: {
+//     type: String
+// },
+// tech: {
+//     type: Array
+// },
+// date: {
+//     type: Date,
+// }
+
 
 const CreateBlog = () => {
     const [form, setForm] = useState({
         title: '',
-        date: '',
-        catch: '',
-        text: ''
+        blogCatchPhrase: '',
+        text: '',
+        link: '',
+        twitterLink: '',
+        tech: [],
+        date: ''
+        
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [errors, setErrors] = useState({
         title: '',
-        date: '',
-        catch: '',
-        text: ''
-    })
-    const [Valid, setValid] = useState(true)
+        blogCatchPhrase: '',
+        text: '',
+        link: '',
+        twitterLink: '',
+        tech: [],
+        date: ''
+    });
 
     const handleChange = (event) => {
         setForm({
@@ -30,10 +64,10 @@ const CreateBlog = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        console.log(validate())
         setErrors(validate())
         setIsSubmitting(true)
-
-    }
+    };
 
     const validate = () => {
         let err = {}
@@ -43,7 +77,7 @@ const CreateBlog = () => {
         if (!form.date) {
             err.date = "Date is required"
         }
-        if (!form.catch) {
+        if (!form.blogCatchPhrase) {
             err.catch = "CatchPhrase is required"
         }
         if (!form.text) {
@@ -56,20 +90,34 @@ const CreateBlog = () => {
         if (isSubmitting) {
             if (Object.keys(errors).length === 0) {
                 setIsSubmitting(true)
-                setTimeout(() => {
-                    console.log('fake api call')
-                    setIsSubmitting(false)
-                }, 2000);
-                // CreateBlog()
-                // alert('success')
-                
+                // setTimeout(() => {
+                //     console.log('fake api call')
+                //     setIsSubmitting(false)
+                // }, 2000);
+                createBlog()
+                alert('success')
+                setIsSubmitting(false)
             } else {
                 setIsSubmitting(false)
-                // alert('failed')
+                alert('failed')
             }
         }
     }, [errors])
 
+    const createBlog = async () => {
+        try {
+            const res = await fetch('http://localhost:3000/api/blogs', {
+                method: 'POST',
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(form)
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
     // useEffect(() => console.log(form), [form])
 
     return (
@@ -97,24 +145,29 @@ const CreateBlog = () => {
                     <StyledContainer onSubmit={handleSubmit}>
                         <StyledTitleLabel>Title:</StyledTitleLabel>
                         <StyledTitleInput
+                            errors={errors}
                             name={"title"}
                             value={form.title} 
                             onChange={handleChange}
                         />
                         <StyledDateLabel>Date:</StyledDateLabel>
                         <StyledDateInput
+                            type={"date"}
+                            errors={errors}
                             name={"date"}
                             value={form.date} 
                             onChange={handleChange}
                         />
                         <StyledCatchPhraseLabel>CatchPhrase:</StyledCatchPhraseLabel>
                         <StyledCatchPhraseInput
-                            name={"catch"}
-                            value={form.catch} 
+                            errors={errors}
+                            name={"blogCatchPhrase"}
+                            value={form.blogCatchPhrase} 
                             onChange={handleChange}
                         />
                         <StyledTextLabel>Text:</StyledTextLabel>
                         <StyledTextInput
+                            errors={errors}
                             name={"text"}
                             value={form.text} 
                             onChange={handleChange}
@@ -168,11 +221,17 @@ const StyledTitleLabel = styled.p`
 `
 const StyledTitleInput = styled.input`
     grid-area: TitleInput;
-    border: ${(errors) => {
-        console.log(errors.value)
-        return errors.value ? null : 'solid red 1px'
+    border: ${(props) => {
+        if (props.errors[props.name] !== "") {
+            if(props.value.length === 0) {
+                return 'solid red 1px'
+            }
+            
+        } else {
+            return null
         }
-    }
+    }};
+    
 `
 const StyledDateLabel = styled.p`
     grid-area: Date;
@@ -181,11 +240,16 @@ const StyledDateLabel = styled.p`
 `
 const StyledDateInput = styled.input`
     grid-area: DateInput;
-    border: ${(errors) => {
-        console.log(errors.value)
-        return errors.value ? null : 'solid red 1px'
+    border: ${(props) => {
+        if (props.errors[props.name] !== "") {
+            if(props.value.length === 0) {
+                return 'solid red 1px'
+            }
+            
+        } else {
+            return null
         }
-    }
+    }};
 `
 const StyledCatchPhraseLabel = styled.p`
     grid-area: CatchPhrase;
@@ -194,11 +258,16 @@ const StyledCatchPhraseLabel = styled.p`
 `
 const StyledCatchPhraseInput = styled.input`
     grid-area: CatchPhraseInput;
-    border: ${(errors) => {
-        console.log(errors.value)
-        return errors.value ? null : 'solid red 1px'
+    border: ${(props) => {
+        if (props.errors[props.name] !== "") {
+            if(props.value.length === 0) {
+                return 'solid red 1px'
+            }
+            
+        } else {
+            return null
         }
-    }
+    }};
 `
 const StyledTextLabel = styled.p`
     grid-area: TextLabel;
@@ -207,11 +276,16 @@ const StyledTextLabel = styled.p`
 `
 const StyledTextInput = styled.textarea`
     grid-area: TextInput;
-    border: ${(errors) => {
-        console.log(errors.value)
-        return errors.value ? null : 'solid red 1px'
+    border: ${(props) => {
+        if (props.errors[props.name] !== "") {
+            if(props.value.length === 0) {
+                return 'solid red 1px'
+            }
+            
+        } else {
+            return null
         }
-    }
+    }};
 `
 const StyledTechContainer = styled.div`
     grid-area: TechContainer;
