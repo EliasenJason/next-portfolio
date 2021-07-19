@@ -4,16 +4,17 @@ import { BlogContainer, BlogHeaderContainer, BlogTitle, BlogDate, BlogCatchPhras
 
 const Blog = ({blogData, index}) => {
     //create onclick for blog to pass data full page article passing props along with text
+    console.log(blogData)
     return (
-        <BlogContainer key={index}>
+        <BlogContainer>
             <BlogHeaderContainer>
                 <BlogTitle>{blogData.title}</BlogTitle>
                 <BlogDate>{blogData.date}</BlogDate>
             </BlogHeaderContainer>
-            <BlogCatchPhrase>{blogData.blogcatchphrase}</BlogCatchPhrase>
+            <BlogCatchPhrase>{blogData.blogCatchPhrase}</BlogCatchPhrase>
             <BlogLinkContainer>
                 <BlogLink>{blogData.tech}</BlogLink>
-                <BlogTwitterLink>{blogData.twitterlink}</BlogTwitterLink>
+                <BlogTwitterLink>{blogData.twitterLink}</BlogTwitterLink>
             </BlogLinkContainer>
         </BlogContainer>
     )
