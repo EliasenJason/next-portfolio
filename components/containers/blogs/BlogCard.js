@@ -1,4 +1,4 @@
-import Blog from "./styled/blog"
+import Blog from "./styled/Blog"
 
 const BlogCard = () => {
     return (
