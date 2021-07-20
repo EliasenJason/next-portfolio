@@ -20,8 +20,6 @@ export default function Home() {
   const [hideThis, setHideThis] = useState(true)
   useEffect(() => setHideThis(false),[])
 
-  console.log(process.env.MONGO_URI)
-
   return (
     <>
     <HeadTag />
