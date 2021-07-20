@@ -5,42 +5,14 @@ import { useState, useEffect } from 'react'
 import router, { useRouter } from 'next/router'
 import Loader from "react-loader-spinner"
 
-
-// title: {
-//     type: String,
-//     required: [true, 'Please provide a title for this blog']
-// },
-// blogCatchPhrase: {
-//     type: String,
-//     required: [true, 'Please provide a catch phrase for this blog']
-// },
-// text: {
-//     type: String,
-//     required: [true, 'Please provide the main text for this blog']
-// },
-// link: {
-//     type: String,
-//     // required: [true, 'Please provide the url to the blog']
-// },
-// twitterLink: {
-//     type: String
-// },
-// tech: {
-//     type: Array
-// },
-// date: {
-//     type: Date,
-// }
-
-
 const CreateBlog = () => {
     const [form, setForm] = useState({
         title: '',
         blogCatchPhrase: '',
         text: '',
+        tweet: '',
         link: '',
         twitterLink: '',
-        tech: [],
         date: ''
         
     })
@@ -49,9 +21,9 @@ const CreateBlog = () => {
         title: '',
         blogCatchPhrase: '',
         text: '',
+        tweet: '',
         link: '',
         twitterLink: '',
-        tech: [],
         date: ''
     });
 
@@ -64,7 +36,7 @@ const CreateBlog = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(validate())
+        // console.log(validate())
         setErrors(validate())
         setIsSubmitting(true)
     };
@@ -90,10 +62,6 @@ const CreateBlog = () => {
         if (isSubmitting) {
             if (Object.keys(errors).length === 0) {
                 setIsSubmitting(true)
-                // setTimeout(() => {
-                //     console.log('fake api call')
-                //     setIsSubmitting(false)
-                // }, 2000);
                 createBlog()
                 alert('success')
                 setIsSubmitting(false)
@@ -114,11 +82,11 @@ const CreateBlog = () => {
                 },
                 body: JSON.stringify(form)
             })
+            router.push("/admin/currentBlogs")
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
-    // useEffect(() => console.log(form), [form])
 
     return (
         <>
@@ -172,7 +140,13 @@ const CreateBlog = () => {
                             value={form.text} 
                             onChange={handleChange}
                         />
-                        <StyledTechContainer></StyledTechContainer>
+                        <StyledTweetLabel>Tweet:</StyledTweetLabel>
+                        <StyledTweetInput
+                            errors={errors}
+                            name={"tweet"}
+                            value={form.tweet}
+                            onChange={handleChange}
+                        ></StyledTweetInput>
                         <StyledLinkContainer></StyledLinkContainer>
                         <StyledSubmitButton
                             type="submit"
@@ -202,14 +176,14 @@ const StyledContainer = styled.form`
     padding: 1em;
     display: grid; 
     grid-template-columns: .3fr 1.3fr 0.3fr .5fr; 
-    grid-template-rows: 0.2fr 0.2fr 0.2fr 5fr 0.2fr 0.2fr 0.2fr; 
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 5fr 3fr 0.2fr 0.2fr; 
     gap: .5em;
     grid-template-areas: 
     "Title          TitleInput          Date                DateInput"
     "CatchPhrase    CatchPhraseInput    CatchPhraseInput    CatchPhraseInput"
     "TextLabel      TextInput           TextInput           TextInput"
     ".              TextInput           TextInput           TextInput"
-    ".              TechContainer       TechContainer       TechContainer"
+    "TweetLabel     TweetContainer      TweetContainer      TweetContainer"
     "Link-Container Link-Container      Link-Container      Link-Container"
     ".              .                   .                   Submit-Button"; 
 `
@@ -287,12 +261,19 @@ const StyledTextInput = styled.textarea`
         }
     }};
 `
-const StyledTechContainer = styled.div`
-    grid-area: TechContainer;
+const StyledTweetLabel = styled.p`
+    grid-area: TweetLabel;
+    text-align: right;
+    padding-right: 1em;
+`
+const StyledTweetInput = styled.input`
+    grid-area: TweetContainer;
 `
 const StyledLinkContainer = styled.div`
     grid-area: Link-Container;
 `
 const StyledSubmitButton = styled.button`
     grid-area: Submit-Button;
+    margin: 0em 10em;
+    padding: 1em;
 `

@@ -17,10 +17,10 @@ export default async (req, res) => {
             break
         case "POST":
             try {
-                console.log(req)
+                // console.log(req)
                 const blog = await Blog.create(req.body)
                 res.status(201).json({ success: true, data: blog })
-                console.log(req.body)
+                // console.log(req.body)
             } catch {
                 res.status(400).json({ success: false })
             }

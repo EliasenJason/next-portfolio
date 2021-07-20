@@ -1,6 +1,8 @@
 import { Header } from "../../components"
 import Link from 'next/link'
 
+        
+
 const CurrentBlogs = () => {
     return (
         <>
@@ -10,7 +12,7 @@ const CurrentBlogs = () => {
             </Link>
             <Header.Nav>
                 <Link href="/admin/createBlog">
-                <a><Header.NavItem>Create new blog</Header.NavItem></a>
+                <a><Header.NavItem>Create blog</Header.NavItem></a>
                 </Link>
             </Header.Nav>
         </Header>

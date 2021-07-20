@@ -1,7 +1,7 @@
-import { Container } from './styled/styled-blog'
+import { Container } from "./styled/styled-blog";
 
-const BlogSection = ({children}) => {
+const Blog = ({children}) => {
     return <Container>{children}</Container>
 }
 
-export default BlogSection
+export default Blog
