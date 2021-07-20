@@ -1,9 +1,9 @@
 import { Fast, Clean, Responsive } from '../public/data/svgs'
-import { Header, Introduction, Knowledge, BlogSection, HeadTag } from '../components/index'
+import { Header, Introduction, Knowledge, HeadTag, Blog } from '../components/index'
 import ContactFormContainer from '../components/containers/contact/ContactForm'
-import Blog from '../components/containers/blogs/Blog'
 import { useState,useEffect } from 'react'
 import Link from 'next/link'
+import BlogCard from '../components/containers/blogs/BlogCard'
 
 export default function Home() {
 
@@ -48,13 +48,18 @@ export default function Home() {
       <Knowledge.Explination>A variety of frameworks, libraries and languages that I have had the opportunity to utilize. Infact, almost all this will be used on this webpage!</Knowledge.Explination>
       <Knowledge.Cards />
     </Knowledge>
-    <BlogSection>
+    <Blog>
+      <BlogCard />
+    </Blog>
+    
+
+    {/* <BlogSection>
     {blogs && blogs.data.map((blogdata, index) => {
       return (
         <Blog blogData={blogdata} key={index}></Blog>
       )
     })}
-    </BlogSection>
+    </BlogSection> */}
     </>
   )
 }

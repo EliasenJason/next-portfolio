@@ -20,8 +20,8 @@ const BlogSchema = new mongoose.Schema({
     twitterLink: {
         type: String
     },
-    tech: {
-        type: Array
+    tweet: {
+        type: String
     },
     date: {
         type: Date,
