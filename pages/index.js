@@ -13,7 +13,9 @@ export default function Home() {
   useEffect(() => {
     fetch('http://localhost:3000/api/blogs')
     .then((res) => res.json())
-    .then((json) => setBlogs(json))
+    .then((json) => {
+      setBlogs(json)
+    })
   },[])
 
   //this is just to hide the contact forms transition off screen on page load:
@@ -49,7 +51,11 @@ export default function Home() {
       <Knowledge.Cards />
     </Knowledge>
     <Blog>
-      <BlogCard />
+      {blogs && blogs.data.map((blogdata, index) => {
+        return (
+          <BlogCard blogData={blogdata} key={index}></BlogCard>
+        )
+      })}
     </Blog>
     
 
