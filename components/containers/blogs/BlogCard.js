@@ -1,11 +1,16 @@
 import Blog from "./styled/Blog"
+import Router from 'next/router'
 
-//need to limit characters possible in twitter text so prevent overflow
+//need to limit characters possible in twitter text to prevent overflow
 
 
 
-const BlogCard = ({blogData, key}) => {
-    console.log(blogData)
+
+const BlogCard = ({blogData, deleteAble}) => {
+    const handleDelete = () => {
+        fetch('http://localhost:3000/api/blogs/' + blogData._id, {method: 'DELETE'})
+        .then(Router.reload(window.location.pathname))
+    }
     return (
         <Blog>
             <Blog.DescriptionContainer>
@@ -13,7 +18,7 @@ const BlogCard = ({blogData, key}) => {
                 <Blog.Date>{blogData.date}</Blog.Date>
                 <Blog.CatchPhrase>{blogData.blogCatchPhrase}</Blog.CatchPhrase>
                 <Blog.TwitterText>{blogData.tweet}</Blog.TwitterText>
-                <Blog.ReadMoreButton>Read More</Blog.ReadMoreButton>
+                {deleteAble ? <button onClick={handleDelete}>Delete</button> : null }<Blog.ReadMoreButton>Read More</Blog.ReadMoreButton>
             </Blog.DescriptionContainer>
         </Blog>
     )

@@ -1,4 +1,4 @@
-import { Container, DescriptionContainer, Title, Date, CatchPhrase, TwitterText, ReadMoreButton } from "./styled-blogs";
+import { Container, DescriptionContainer, Title, Date, CatchPhrase, TwitterText, ReadMoreButton, DeleteButton } from "./styled-blogs";
 
 const Blog = ({children}) => {
     return <Container>{children}</Container>

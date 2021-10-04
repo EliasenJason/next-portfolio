@@ -10,6 +10,7 @@ export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [blogs, setBlogs] = useState()
 
+  //fetch all blogs from database and put into state
   useEffect(() => {
     fetch('http://localhost:3000/api/blogs')
     .then((res) => res.json())
@@ -18,7 +19,7 @@ export default function Home() {
     })
   },[])
 
-  //this is just to hide the contact forms transition off screen on page load:
+  //hide the contact forms transition off screen on page load:
   const [hideThis, setHideThis] = useState(true)
   useEffect(() => setHideThis(false),[])
 

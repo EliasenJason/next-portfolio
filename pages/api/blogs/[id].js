@@ -4,6 +4,8 @@ import Blog from "../../../models/blogSchema";
 dbConnect()
 
 export default async (req, res) => {
+    
+    //destruct req object for req.query.id and the method
     const {
         query: { id },
         method
