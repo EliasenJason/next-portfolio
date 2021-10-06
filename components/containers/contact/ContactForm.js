@@ -10,8 +10,17 @@ const ContactFormContainer = ({setIsContactOpen, isContactOpen}) => {
     const [email, setEmail] = useState('')
     const [comment, setComment] = useState('')
 
-    const handleSubmit = (event) => {
-        console.log(`my state is the following: name=${name}, email=${email}, comment=${comment} and you should send this to a database?`)
+    const handleSubmit = async (event) => {
+        const formData = {
+            name,
+            email,
+            comment
+        }
+        fetch('api/mail', {
+            method: 'post',
+            body: JSON.stringify(formData)
+        })
+        //console.log(`my state is the following: name=${name}, email=${email}, comment=${comment} and you should send this to a database?`)
     }
     return (
         <ContactForm isContactOpen={isContactOpen}>
@@ -22,7 +31,7 @@ const ContactFormContainer = ({setIsContactOpen, isContactOpen}) => {
             <ContactForm.InputLabel>Email</ContactForm.InputLabel>
             <ContactForm.Input type="text" value={email} onChange={(event) => setEmail(event.target.value)}></ContactForm.Input>
             <ContactForm.InputLabel>Whats up?</ContactForm.InputLabel>
-            <ContactForm.Input type="text" value={comment} onChange={(event) => setComment(event.target.value)} height={'40%'}></ContactForm.Input>
+            <ContactForm.InputTextArea type="text" value={comment} onChange={(event) => setComment(event.target.value)} height={'40%'}></ContactForm.InputTextArea>
             <ContactForm.Button onClick={() => handleSubmit()}>Submit</ContactForm.Button>
         </ContactForm>
     )

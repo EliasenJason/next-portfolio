@@ -1,4 +1,4 @@
-import { Container, StyledHeader, StyledInputLabel, StyledInput, StyledButton, StyledCloseButton } from "./styled-contactform"
+import { Container, StyledHeader, StyledInputLabel, StyledInput, StyledTextArea, StyledButton, StyledCloseButton } from "./styled-contactform"
 
 const ContactForm = ({children, isContactOpen}) => {
     return <Container isContactOpen={isContactOpen}>{children}</Container>
@@ -16,6 +16,10 @@ ContactForm.InputLabel = ({children}) => {
 
 ContactForm.Input = ({value, onChange, ...restprops}) => {
     return <StyledInput value={value} onChange={onChange} {...restprops}></StyledInput>
+}
+
+ContactForm.InputTextArea = ({value, onChange, ...restprops}) => {
+    return <StyledTextArea value={value} onChange={onChange} {...restprops}></StyledTextArea>
 }
 
 ContactForm.Button = ({children, onClick}) => {

@@ -85,6 +85,16 @@ export const StyledInput = styled.input`
     border-radius: ${({height}) => height ? '0% 0% 0% 20%' : null};
     margin-bottom: 1.1em;
 `
+export const StyledTextArea = styled.textarea`
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border: solid 1px #3c00FF;
+    border-radius: .2em;
+    height: ${({height}) => height};
+    border-radius: ${({height}) => height ? '0% 0% 0% 20%' : null};
+    margin-bottom: 1.1em;
+`
 export const StyledButton = styled.button`
     background-color: #3c00FF;
     color: #FFF;
